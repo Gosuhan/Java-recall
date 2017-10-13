@@ -66,6 +66,11 @@ public class PlayingWithAlgo {
 	}
 
 	public static List<String> sortByLastLetter(String array[]) {
+		
+		//ArrayList<String> resultat = new ArrayList<String>();			}
+		
+		
+		
 		return null;
 	}
 
@@ -271,7 +276,15 @@ public class PlayingWithAlgo {
 	
 	public static boolean checkCase1(double prix, int pourcentDeRemise) {
 		// t'as 100 euros, verifie si tu peux acheter l'article solde
-		return false;
+		
+		double prixTotal = prix- (prix * pourcentDeRemise / 100);
+				
+		if ( prixTotal <= 100) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public static boolean checkCase2(int number1, int number2) {
