@@ -34,7 +34,7 @@ public class PlayingWithAlgo {
 		
 		for(int i=0; i<array.length; i++) {
 			//if (array[i].charAt(0) == 'a' || array[i].charAt(0) == 'e' || array[i].charAt(0) == 'i' || array[i].charAt(0) == 'o' || array[i].charAt(0) == 'u' || array[i].charAt(0) == 'y') {
-			if (array[i].matches("[aeiouy].*")) {	
+			if (array[i].matches("[a|e|i|o|u|y].*")) {	
 				result.add(array[i]);
 			}
 		}
@@ -54,6 +54,11 @@ public class PlayingWithAlgo {
 	}
 
 	public static String[] reverseWordsInMyStringArray(String array[]) {
+		
+		for(int i=0; i<array.length; i++) {
+			;
+		}
+		
 		return null;
 	}
 
@@ -342,20 +347,48 @@ public class PlayingWithAlgo {
 	}
 	
 	public static boolean checkIfStringStartsWithA( String word ) {
+		
+		if (word.startsWith("a") || word.startsWith("A")) {
+			return true;
+		}
+		else {
 		return false;
+		}
 	}
 	
 	public static boolean checkIfStringStartsWithVowel( String word ) {
+		
+		if (word.matches("[a|e|i|o|u|y|A|E|I|O|U|Y].*")) {
+			return true;
+		}
+		else {
 		return false;
+		}
 	}
 	
 	public static boolean checkIfStringEndsWithS( String word ) {
+		
+		if (word.endsWith("s") || word.endsWith("S")) {
+			return true;
+		}
+		else {
 		return false;
+		}
 	}
 	
 	public static String findShortestWord(String[] array ) {
 		
-		return null;
+		String shortWord = "";
+		
+		for (int i=0; i<array.length; i++) {
+			if (array[i].length() < array[i+1].length()) {
+			shortWord = array [i];
+			}
+			else {
+			shortWord = array[i+1];
+			}
+		return shortWord;
+		}
 	}
 	
 	public static String swapFirstandLastLetter(String array ) {
