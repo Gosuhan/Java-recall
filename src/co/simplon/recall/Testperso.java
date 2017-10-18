@@ -6,24 +6,19 @@ import java.util.List;
 public class Testperso {
 
 	public static void main(String[] args) {
-		String[] test = { "john", "david", "omar", "fred", null, "idris", "angela" };
-		System.out.println(selectElementsStartingWithVowel(test));
+		//String[] test = { "john", "david", "omar", "fred", "idris", "angela" };
+		System.out.println(checkCase2(6,8));
 
 	}
 
-	public static List<String> selectElementsStartingWithVowel(String array[]) {
+	public static boolean checkCase2(int number1, int number2) {
+		// check si une de 2 chiffres, ou leur somme se divise par 7
 		
-		ArrayList<String> result = new ArrayList<String>();
-		
-		for(int i=0; i<array.length; i++) {
-			
-			if (array[i] == null) {}
-			//if (array[i].charAt(0) == 'a' || array[i].charAt(0) == 'e' || array[i].charAt(0) == 'i' || array[i].charAt(0) == 'o' || array[i].charAt(0) == 'u' || array[i].charAt(0) == 'y') {
-			else if (array[i].matches("[a|e|i|o|u|y].*")) {	
-				result.add(array[i]);
-			}
+		if (number1 %7 == 0 || number2 %7 == 0 || (number1 + number2) %7 == 0) {
+			return true;
 		}
-		
-		return result;
+		else {
+			return false;
+		}
 	}
 }

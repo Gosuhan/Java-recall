@@ -297,7 +297,13 @@ public class PlayingWithAlgo {
 	
 	public static boolean checkCase2(int number1, int number2) {
 		// check si une de 2 chiffres, ou leur somme se divise par 7
-		return false;
+		
+		if (number1 %7 == 0 || number2 %7 == 0 || (number1 + number2) %7 == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public static boolean checkCase2a(int number1, int number2) {
@@ -391,17 +397,18 @@ public class PlayingWithAlgo {
 	
 	public static String findShortestWord(String[] array ) {
 		
-		String shortWord = "";
-		
-		for (int i=0; i<array.length; i++) {
-			if (array[i].length() < array[i+1].length()) {
-			shortWord = array [i];
-			}
-			else {
-			shortWord = array[i+1];
-			}
-		return shortWord;
-		}
+//		String shortWord = "";
+//		
+//		for (int i=0; i<array.length; i++) {
+//			if (array[i].length() < array[i+1].length()) {
+//				shortWord = array[i];
+//			}
+//			else {
+//				shortWord = array[i+1];
+//			}
+//		}
+//		return (String)shortWord;
+		return null;
 	}
 	
 	public static String swapFirstandLastLetter(String array ) {
