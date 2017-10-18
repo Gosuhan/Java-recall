@@ -1,5 +1,6 @@
 package co.simplon.recall;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class PlayingWithAlgo {
@@ -33,8 +34,9 @@ public class PlayingWithAlgo {
 		ArrayList<String> result = new ArrayList<String>();
 		
 		for(int i=0; i<array.length; i++) {
+			if (array[i] == null) {}
 			//if (array[i].charAt(0) == 'a' || array[i].charAt(0) == 'e' || array[i].charAt(0) == 'i' || array[i].charAt(0) == 'o' || array[i].charAt(0) == 'u' || array[i].charAt(0) == 'y') {
-			if (array[i].matches("[a|e|i|o|u|y].*")) {	
+			else if (array[i].matches("[a|e|i|o|u|y].*")) {	
 				result.add(array[i]);
 			}
 		}
@@ -43,14 +45,15 @@ public class PlayingWithAlgo {
 
 	public static String[] removeNullElements(String array[]) {
 		
-		String[] result;
-		
-		for(int i=0; i<array.length; i++) {
-			if (array[i] != null) {
-				result.add(array[i]);
-			}
-		}
-		return result;
+//		String[] result;
+//		
+//		for(int i=0; i<array.length; i++) {
+//			if (array[i] != null) {
+//				result.add(array[i]);
+//			}
+//		}
+//		return result;
+		return null;
 	}
 
 	public static String[] reverseWordsInMyStringArray(String array[]) {
@@ -322,10 +325,20 @@ public class PlayingWithAlgo {
 	}
 	
 	public static ArrayList<Integer> reverseOrder(int array[]) {
+		
+//		ArrayList<Integer> resultat = new ArrayList<Integer>();
+//		Collections.reverse(array);
+//		return resultat;
 		return null;
+
 	}
 	
 	public static int[] reverseOrderInt(int array[]) {
+		
+//		List<Integer> list = Arrays.asList(1, 4, 9, 16, 9, 7, 4, 9, 11);
+//		System.out.println(list);
+//		Collections.reverse(list);
+//		System.out.println(list);
 		return null;
 	}
 	
