@@ -279,7 +279,12 @@ public class PlayingWithAlgo {
 	
 	public static boolean checkSiTuPeuxAcheter(int prix) {
 		// t'as 22 euros en monnaies de 2 euros, la machine ne rend pas de monnaie, check si tu peux payer
-		return false;
+		if ((prix <= 22) && (prix %2 == 0)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public static boolean checkCase1(double prix, int pourcentDeRemise) {
@@ -308,12 +313,22 @@ public class PlayingWithAlgo {
 	
 	public static boolean checkCase2a(int number1, int number2) {
 		// check si une de 2 chiffres mais pas leur somme se divise par 7
-		return false;
+		if ((number1 %7 == 0 || number2 %7 == 0) && (number1 + number2) %7 != 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public static boolean checkCase3(int number1, int number2, int number3) {
 		// check si les trois chiffres sont dans l'ordre, soit croissant ou decroissant
-		return false;
+		if ((number1 < number2 && number2 < number3) || (number1 > number2 && number2 > number3)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public static ArrayList<Integer> allElementsExceptFirstAndLast(int array[]) {
