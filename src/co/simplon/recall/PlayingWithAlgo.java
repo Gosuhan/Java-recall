@@ -410,7 +410,15 @@ public class PlayingWithAlgo {
 	
 	public static ArrayList<Integer> exportElementsPair( ArrayList<Integer> list ) {
 		
-		return null;
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		
+		for(int i = 0; i < list.size() ; i++) {
+			if (list.get(i) %2==0) {
+				result.add(list.get(i));
+			}
+		}
+		
+		return result;
 	}
 	
 	public static ArrayList<Integer> exportElementsWithIndexPair( ArrayList<Integer> list ) {
