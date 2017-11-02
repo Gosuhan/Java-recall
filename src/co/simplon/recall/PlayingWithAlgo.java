@@ -148,8 +148,20 @@ public class PlayingWithAlgo {
 	}
 	
 	public static boolean checkForSpecialCharacters(String string) {
+		
+//		String[] caractSpec = {"!", "?", "@", "*"};
+//		
+////		for(int i = 0; i < string.length(); i++) {
+//			if(string.contains(caractSpec)) {
+//				return true;
+//			}
+//			else {
+//				return false;
+//			}
+//		}
 		return false;
 	}
+	
 	
 	public static String[] findAnagrams(String name) {
 		return null;
@@ -174,6 +186,7 @@ public class PlayingWithAlgo {
 	}
 
 	public static long addingSeveralNumbers(final long... numbers) {
+		
 		return 0;
 	}
 
@@ -190,6 +203,32 @@ public class PlayingWithAlgo {
 	}
 
 	public static String[] getElementsLowerThanSix(String[] array) {
+		
+//		int nbreElementThanSix = 0;
+//		for(int i = 0; i < array.length; i++) {
+//			if(array[i].equals("1")/*("1 | 2 | 3 | 4 | 5 | 6")*/ || array[i].equals("2") || array[i].equals("3") || array[i].equals("4") || array[i].equals("5") || array[i].equals("6")) {
+//				nbreElementThanSix ++; //= nbreElementThanSix + 1; ou nbreElementNull ++; ou nbreElementNul += 1;
+//			}
+//		}
+//		
+//		String[] result = new String[nbreElementThanSix];
+//		int j = 0;		
+//		
+//		for(int i = 0; i < array.length; i++) {
+//			if(array[i].equals("1")/*("1 | 2 | 3 | 4 | 5 | 6")*/ || array[i].equals("2") || array[i].equals("3") || array[i].equals("4") || array[i].equals("5") || array[i].equals("6")) {
+//				result[j] = array[i];
+//				j++;
+//			}
+//		}
+//		
+////		Set<String> monSet = new TreeSet<String>();
+////		monSet.add(result[j]);
+////		
+////		String[] result2 = new String[nbreElementThanSix](monSet);
+////		
+////		return result2;
+//		return result; //NE PAS PRENDRE ELEMENTS EN DOUBLE !!!
+		
 		return null;
 	}
 	
@@ -285,12 +324,41 @@ public class PlayingWithAlgo {
 	
 	public static ArrayList<Integer> exportAllElementsPair(int[] array) {
 		
+		ArrayList<Integer> resultat = new ArrayList<Integer>();
 		
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] %2 == 0) {
+				resultat.add(array[i]);
+			}
+		}
 		
-		return null;
+		return resultat;
 	}
 	
 	public static ArrayList<Integer> exportAllUniqueElementsPair(int[] array) {
+		
+	//	L'ORDRE (SORTIE) DOIT ETRE RESPECTE !!!  NE DOIT PAS ETRE EN ORDRE CROISSANT !!!
+//		ArrayList<Integer> resultat = new ArrayList<Integer>();
+//		
+//		for(int i = 0; i < array.length; i++) {
+//			//int j = 0;
+//			if(array[i] %2 == 0 /*&& array[j] != array[i]*/) {
+//				resultat.add(array[i]);
+//			}
+//		}
+////		for(int i = 0; i < array.length; i++) {
+////			int j = 0;
+////			if(array[j++] == array[i]) {
+////			resultat.remove(array[j]);
+////			//j++;
+////			}
+//		Set<Integer> monSet = new TreeSet<Integer>();
+//		monSet.addAll(resultat);
+//		
+//		ArrayList<Integer> resultat2 = new ArrayList<Integer>(monSet);
+//		
+//		return resultat2;
+		
 		return null;
 	}
 	
@@ -364,6 +432,18 @@ public class PlayingWithAlgo {
 	
 	public static ArrayList<Integer> allElementsExceptFirstAndLast(int array[]) {
 
+		
+//		ArrayList<Integer> result = new ArrayList<Integer>();
+//		
+//		int j = 0;
+//		
+//		for(int i = 1; i < array.length - 1; i++) {
+//			result[j] = array[i];
+//			j++;
+//		}
+//		
+//		return result;
+		
 		return null;
 	}
 	
@@ -383,7 +463,17 @@ public class PlayingWithAlgo {
 	
 	
 	public static ArrayList<Integer> allElementsWithIndexPair(int array[]) {
-		return null;
+		
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		
+		for(int i = 0; i < array.length ; i++) {
+			int indice = i;
+			if (indice %2==0) {
+				result.add(array[i]);
+			}
+		}
+		
+		return result;
 	}
 	
 	public static ArrayList<Integer> reverseOrder(int array[]) {
