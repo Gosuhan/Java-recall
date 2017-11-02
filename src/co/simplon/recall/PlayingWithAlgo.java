@@ -45,22 +45,31 @@ public class PlayingWithAlgo {
 
 	public static String[] removeNullElements(String array[]) {
 		
-//		String[] result;
-//		
-//		for(int i=0; i<array.length; i++) {
-//			if (array[i] != null) {
-//				result.add(array[i]);
-//			}
-//		}
-//		return result;
-		return null;
+		int nbreElementNull = 0;
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] == null) {
+				nbreElementNull = nbreElementNull + 1; // ou nbreElementNull ++; ou nbreElementNul += 1;
+			}
+		}
+		
+		String[] result = new String[array.length - nbreElementNull];
+		int j = 0;		
+		
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] != null) {
+				result[j] = array[i];
+				j++;
+			}
+		}
+		
+		return result;
 	}
 
 	public static String[] reverseWordsInMyStringArray(String array[]) {
 		
-		for(int i=0; i<array.length; i++) {
-			;
-		}
+//		for(int i=0; i<array.length; i++) {
+//			;
+//		}
 		
 		return null;
 	}
@@ -83,7 +92,19 @@ public class PlayingWithAlgo {
 	}
 
 	public static String getFirstHalf(String string) {
-		return null;
+		
+		int half = 0;
+		
+		if(string.length() %2 == 0) {
+			half = string.length() / 2;
+		}
+		else {
+			half = (string.length() / 2) + 1;
+		}
+		
+		string = string.substring(0, half);
+		
+		return string;
 	}
 
 	public static String exportWordWithoutALetter(String array[], char letter) {
@@ -274,7 +295,17 @@ public class PlayingWithAlgo {
 	}
 	
 	public static boolean checkIfTriangleRectangle(int number1, int number2, int number3) {
-		return false;
+		boolean reponse = false;
+		
+		int cote1 = number1 * number1;
+		int cote2 = number2 * number2;
+		int cote3 = number3 * number3;
+		
+		if(cote1 + cote2 == cote3 || cote2 + cote3 == cote1 || cote1 + cote3 == cote2) {
+			reponse = true;
+		}
+		
+		return reponse;
 	}
 	
 	public static boolean checkSiTuPeuxAcheter(int prix) {
@@ -337,7 +368,17 @@ public class PlayingWithAlgo {
 	}
 	
 	public static int[] allElementsExceptFirstAndLastInt(int array[]) {
-		return null;
+		
+		int nbreElementRetire = 2;
+		int[] result = new int[array.length - nbreElementRetire];
+		int j = 0;
+		
+		for(int i = 1; i < array.length - 1; i++) {
+			result[j] = array[i];
+			j++;
+		}
+		
+		return result;
 	}
 	
 	
@@ -373,10 +414,21 @@ public class PlayingWithAlgo {
 	}
 	
 	public static ArrayList<Integer> exportElementsWithIndexPair( ArrayList<Integer> list ) {
-		return null;
+		
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		
+		for(int i = 0; i < list.size() ; i++) {
+			int indice = i;
+			if (indice %2==0) {
+				result.add(list.get(i));
+			}
+		}
+		
+		return result;
 	}
 	
 	public static int Addition( HashMap<String, Integer> addition ) {
+		
 		return 0;
 	}
 	
@@ -412,28 +464,75 @@ public class PlayingWithAlgo {
 	
 	public static String findShortestWord(String[] array ) {
 		
-//		String shortWord = "";
-//		
-//		for (int i=0; i<array.length; i++) {
-//			if (array[i].length() < array[i+1].length()) {
-//				shortWord = array[i];
-//			}
-//			else {
-//				shortWord = array[i+1];
-//			}
-//		}
-//		return (String)shortWord;
-		return null;
+		int tailleMot = array[0].length();
+		int indice = 0;
+		for(int i=1; i<array.length; i++) {
+			if(array[i].length() < tailleMot) {
+				indice = i;
+				tailleMot = array[i].length();
+			}
+		}
+		return array[indice];
 	}
 	
 	public static String swapFirstandLastLetter(String array ) {
 		
+//		//String result = "";
+//		
+//		char beginning = array.charAt(0);
+//	    char end = array.charAt(array.length() - 1);
+//	    char beginning2 = beginning;
+//		
+////		array.replace(beginning, end);
+////		array.replace(end, beginning);
+//	    array.toCharArray();
+//	    beginning = end;
+//	    end = beginning2;
+//	    
+//		
+//		return array;
 		return null;
 	}
 	
 	public static int[] swapFirstandLastElement(int[] array ) {
 		
-		return null;
+//		int[] result = new int[array.length];
+//		
+//		int j = 0;
+//		
+//		for(int i = 0 ; i < array.length ; i++) {
+//			result[j] = array[i];
+//			j++;
+//		}
+//		
+//		int premierElement = result[0];
+//		//int j = array.length - 1;
+//		int dernierElement = result[result.length - 1];
+//		int elementProvisoire = premierElement;
+//		
+//		for(int i = 0; i < result.length ; i++) {
+//			//elementProvisoire = premierElement;
+//			premierElement = dernierElement;
+//			dernierElement = elementProvisoire;
+//			//System.out.println(result[0]);
+//		}
+		int[] result = new int[array.length];
+		int premierElement = array[0];
+		//int j = array.length - 1;
+		int dernierElement = array[array.length - 1];
+		//int elementProvisoire = premierElement;
+		int j = 0;
+		
+		for(int i = 0 ; i < array.length ; i++) {
+			result[j] = array[i];
+			j++;
+		}
+//		premierElement = dernierElement;
+//		dernierElement = elementProvisoire;
+		result[0] = dernierElement;
+		result[result.length - 1] = premierElement;
+		
+		return result;
 	}
 
 }
