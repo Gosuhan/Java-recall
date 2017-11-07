@@ -67,18 +67,52 @@ public class PlayingWithAlgo {
 
 	public static String[] reverseWordsInMyStringArray(String array[]) {
 		
-//		for(int i=0; i<array.length; i++) {
-//			;
-//		}
+		String[] result = new String [array.length];
 		
-		return null;
+		for(int i = 0; i<array.length; i++) {
+			
+			String mot = array[i];
+			StringBuffer motInverse = new StringBuffer();
+			
+			for (int j = mot.length() - 1; j >= 0; j--) {
+				
+				motInverse.append(mot.charAt(j));
+				result[i] = motInverse.toString();
+			}
+		}
+		
+		return result;
+
 	}
 
 	public static String[] reverseOrderInArray(String array[]) {
-		return null;
+		
+		String[] result = new String[array.length];
+		
+		for (int i = 0; i < array.length; i++) {
+			result[array.length-1 - i] = array[i];
+		}
+		
+		return result;
 	}
 
 	public static String[][] everyPossiblePair(String array[]) {
+		
+//		String[][] result = new String[array.length][array.length - 1];
+//	
+//		
+//		//result[][] = {{3,1}, {3, 2}, {1, 2}};
+//		
+//		//result = {{"Daenerys","Jon"}, {"Daenerys", "Tyrion"}, {"Jon", "Tyrion"}};
+//		
+//		
+////		for( int i = 0; i< array.length; i++){
+////			   for( int j = 0; j<array.length - 1; j++){
+////			      result[i][j] = {{array[array.length-1], },{array[i]}};
+////			   }
+////		}
+//		return result;
+	
 		return null;
 	}
 
@@ -221,14 +255,14 @@ public class PlayingWithAlgo {
 //			}
 //		}
 //		
-////		Set<String> monSet = new TreeSet<String>();
-////		monSet.add(result[j]);
-////		
-////		String[] result2 = new String[nbreElementThanSix](monSet);
-////		
-////		return result2;
+//		Set<String> monSet = new LinkedHashSet<String>();
+//		monSet.add(result[j++]);
+//		
+//		String[] result2 = new String[nbreElementThanSix](monSet);
+//		
+//		return result2;
 //		return result; //NE PAS PRENDRE ELEMENTS EN DOUBLE !!!
-		
+//		
 		return null;
 	}
 	
@@ -337,29 +371,21 @@ public class PlayingWithAlgo {
 	
 	public static ArrayList<Integer> exportAllUniqueElementsPair(int[] array) {
 		
-	//	L'ORDRE (SORTIE) DOIT ETRE RESPECTE !!!  NE DOIT PAS ETRE EN ORDRE CROISSANT !!!
-//		ArrayList<Integer> resultat = new ArrayList<Integer>();
-//		
-//		for(int i = 0; i < array.length; i++) {
-//			//int j = 0;
-//			if(array[i] %2 == 0 /*&& array[j] != array[i]*/) {
-//				resultat.add(array[i]);
-//			}
-//		}
-////		for(int i = 0; i < array.length; i++) {
-////			int j = 0;
-////			if(array[j++] == array[i]) {
-////			resultat.remove(array[j]);
-////			//j++;
-////			}
-//		Set<Integer> monSet = new TreeSet<Integer>();
-//		monSet.addAll(resultat);
-//		
-//		ArrayList<Integer> resultat2 = new ArrayList<Integer>(monSet);
-//		
-//		return resultat2;
+		ArrayList<Integer> resultatTsPairs = new ArrayList<Integer>();
 		
-		return null;
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] %2 == 0) {
+				resultatTsPairs.add(array[i]);
+			}
+		}
+
+		Set<Integer> monSet = new LinkedHashSet<Integer>(); // Ordre de sortie respecté contrairement à TreeSet ou hashSet (http://blog.paumard.org/cours/java-api/chap01-api-collection-set.html)
+		monSet.addAll(resultatTsPairs);
+		
+		ArrayList<Integer> resultatUniquePairs = new ArrayList<Integer>(monSet);
+		
+		return resultatUniquePairs;
+
 	}
 	
 	public static boolean checkIfTriangleRectangle(int number1, int number2, int number3) {
