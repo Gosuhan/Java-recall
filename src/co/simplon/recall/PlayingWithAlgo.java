@@ -188,7 +188,18 @@ public class PlayingWithAlgo {
 	}
 
 	public static String longestWord(String text) {
-		return null;
+		
+		text = text.replaceAll("[,.]", "");
+		String[] words = text.split(" ");
+		String longWord = words[0];
+		
+		for (int i = 0; i<words.length; i++) {
+			if(longWord.length() < words[i].length()) {	
+				longWord = words[i];
+			}
+		}	
+		
+		return longWord;
 	}
 
 	public static String getAllLetters(String[] array) {
