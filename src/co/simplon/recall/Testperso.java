@@ -5,22 +5,30 @@ public class Testperso {
 	public static void main(String[] args) {
 		// int[] arrayIn = { 2, 3, 2, 0, 4, 11, 6, 8 };
 		// System.out.println(swapFirstandLastElement(arrayIn));
-		System.out.println(swapFirstandLastLetter("drago"));
+		System.out.println(numberOfPalindromeWord("kayak,noon, khaleesi, hodor,racecar,ana,tattarrattat,"));
 	}
 
-	public static String swapFirstandLastLetter(String array ) {
+	public static int numberOfPalindromeWord(String text) {
 		
-		//String result = "";
-		char beginning = array.charAt(0);
-	    char end = array.charAt(array.length() - 1);
-	    char beginning2 = beginning;
+		int result = 0;
+		String reverseWord = new String();
 		
-//		array.replace(beginning, end);
-//		array.replace(end, beginning);
-	    array.toCharArray();
-	    
+		String [] words = text.split(",");
 		
-		return array;
+		for (int i = 0; i < words.length-1; i++) {
+			
+			String word = words[i];
+		
+			for (int j = word.length()-1; j<= 0;  j--) {
+				reverseWord += word.charAt(j);  
+			}
+			
+			if(word == reverseWord) {
+				result++;
+			}
+		}
+		
+		return result;
 	}
 }
 
@@ -64,3 +72,21 @@ public class Testperso {
 // return result;
 // }
 // }
+
+
+//TEST QUI NE MARCHE PAS :
+//public static void main(String[] args) {
+//	int[] arrayIn = { 2, 3, 2, 0, 4, 11, 6, 8 };
+//	// System.out.println(swapFirstandLastElement(arrayIn));
+//	System.out.println(allElementsExceptFirstThree(arrayIn));
+//}
+//
+//public static int[] allElementsExceptFirstThree(int array[]) {
+//	int[] result = new int[array.length - 3];
+//	
+//	for(int i = 3; i<array.length; i++) {
+//		result[i] = array[i];
+//	}
+//	return result;
+//}
+//}

@@ -146,6 +146,26 @@ public class PlayingWithAlgo {
 	}
 
 	public static int numberOfPalindromeWord(String text) {
+		
+//		int result = 0;
+//		String reverseWord = new String();
+//		
+//		String [] words = text.split("'");
+//		
+//		for (int i = 0; i < words.length-1; i++) {
+//			
+//			String word = words[i];
+//		
+//			for (int j = word.length()-1; j<= 0;  j--) {
+//				reverseWord += word.charAt(j);  
+//			}
+//			
+//			if(word == reverseWord) {
+//				result++;
+//			}
+//		}
+//		
+//		return result;
 		return 0;
 	}
 
@@ -154,7 +174,17 @@ public class PlayingWithAlgo {
 	}
 	
 	public static String shortestWord(String text) {
-		return null;
+		
+		String[] words = text.split(" ");
+		String shortWord = words[0];
+		
+		for (int i = 0; i<words.length; i++) {
+			if(shortWord.length() > words[i].length()) {	
+				shortWord = words[i];
+			}
+		}	
+		
+		return shortWord;
 	}
 
 	public static String longestWord(String text) {
@@ -225,7 +255,12 @@ public class PlayingWithAlgo {
 	}
 
 	public static int[] allElementsExceptFirstThree(int array[]) {
-		return null;
+		int[] result = new int[array.length - 3];
+		
+		for(int i = 3; i<array.length; i++) {
+			result[i-3] = array[i];
+		}
+		return result;
 	}
 
 	public static int[] addElementToBeginning(int array[], int element) {
