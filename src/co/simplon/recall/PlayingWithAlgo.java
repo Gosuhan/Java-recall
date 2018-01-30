@@ -259,6 +259,10 @@ public class PlayingWithAlgo {
 	}
 
 	public static int[] letterPosition(String name) {
+		
+//		{"","a", "b","c", "d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+		
+
 		return null;
 	}
 	
@@ -278,7 +282,13 @@ public class PlayingWithAlgo {
 
 	public static long addingSeveralNumbers(final long... numbers) {
 		
-		return 0;
+		long result = 0;
+		
+		for(int i = 0; i < numbers.length; i++) {
+			result += numbers[i];
+		}
+		
+		return result;
 	}
 
 	public static int[] allElementsExceptFirstThree(int array[]) {
