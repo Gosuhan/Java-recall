@@ -227,7 +227,11 @@ public class PlayingWithAlgo {
 	}
 	
 	public static String getDomainName(String email) {
-		return null;
+		
+		String domainNameFirstReplace = email.replaceAll("^.+@", "");
+		String domainName = domainNameFirstReplace.replaceAll(".com", "");
+		
+		return domainName;
 	}
 
 	public static String titleize(String title) {
