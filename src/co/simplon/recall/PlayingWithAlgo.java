@@ -301,7 +301,15 @@ public class PlayingWithAlgo {
 	}
 
 	public static int[] addElementToBeginning(int array[], int element) {
-		return null;
+		
+		int[] newArray = new int[array.length +1];
+		
+		for(int i = 0; i<array.length; i++) {
+			newArray[0] = element;
+			newArray[i+1] = array[i];
+		}
+		
+		return newArray;
 	}
 
 	public static Float makeNegative(Float number) {
