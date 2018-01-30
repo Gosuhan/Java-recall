@@ -214,7 +214,16 @@ public class PlayingWithAlgo {
 	}
 	
 	public static String formatDateNicely(String text) {
-		return null;
+		
+		String[] array = text.split("-");
+
+		String day = array[2];
+		String month = array[1];
+		String year = array[0];
+		
+		String newDate = day + "/" + month + "/" + year;
+		
+		return newDate;
 	}
 	
 	public static String getDomainName(String email) {
