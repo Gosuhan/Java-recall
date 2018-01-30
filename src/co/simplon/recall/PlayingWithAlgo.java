@@ -240,17 +240,17 @@ public class PlayingWithAlgo {
 	
 	public static boolean checkForSpecialCharacters(String string) {
 		
-//		String[] caractSpec = {"!", "?", "@", "*"};
-//		
-////		for(int i = 0; i < string.length(); i++) {
-//			if(string.contains(caractSpec)) {
-//				return true;
-//			}
-//			else {
-//				return false;
-//			}
-//		}
-		return false;
+		CharSequence spec1 = "!";
+		CharSequence spec2 = "?";
+		CharSequence spec3 = "@";
+		CharSequence spec4 = "*";
+		
+		if(string.contains(spec1) || string.contains(spec2) || string.contains(spec3) || string.contains(spec4)) {
+			return true;
+			}
+			else {
+				return false;
+			}
 	}
 	
 	
