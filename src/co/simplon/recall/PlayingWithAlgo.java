@@ -313,7 +313,12 @@ public class PlayingWithAlgo {
 	}
 
 	public static Float makeNegative(Float number) {
-		return null;
+		
+		if(number > 0) {
+		number = number * -1;
+		}
+		
+		return number;
 	}
 
 	public static String[] getElementsLowerThanSix(String[] array) {
