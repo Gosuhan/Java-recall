@@ -207,7 +207,10 @@ public class PlayingWithAlgo {
 	}
 	
 	public static String removeCapitals(String text) {
-		return null;
+		
+		text = text.replaceAll("[A-Z]", "");
+		
+		return text;
 	}
 	
 	public static String formatDateNicely(String text) {
